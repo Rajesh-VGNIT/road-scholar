@@ -43,34 +43,26 @@ window.addEventListener("scroll", scrollEventHandler, false);
 
 	// Nav.
 
-		// Title Bar.
-		// 	$(
-		// 		'<div id="titleBar">' +
-		// 			'<a href="#navPanel" class="toggle"></a>' +
-		// 			'<span class="title">' + $('#logo').html() + '</span>' +
-		// 		'</div>'
-		// 	)
-		// 		.appendTo($body);
-
-		// // Panel.
-		// 	$(
-		// 		'<div id="navPanel">' +
-		// 			'<nav>' +
-		// 				$('#nav').navList() +
-		// 			'</nav>' +
-		// 		'</div>'
-		// 	)
-		// 		.appendTo($body)
-		// 		.panel({
-		// 			delay: 500,
-		// 			hideOnClick: true,
-		// 			hideOnSwipe: true,
-		// 			resetScroll: true,
-		// 			resetForms: true,
-		// 			side: 'left',
-		// 			target: $body,
-		// 			visibleClass: 'navPanel-visible'
-		// 		});
+		
+		// Panel.
+			$(
+				'<div id="navPanel">' +
+					'<nav>' +
+						$('#nav').navList() +
+					'</nav>' +
+				'</div>'
+			)
+				.appendTo($body)
+				.panel({
+					delay: 500,
+					hideOnClick: true,
+					hideOnSwipe: true,
+					resetScroll: true,
+					resetForms: true,
+					side: 'left',
+					target: $body,
+					visibleClass: 'navPanel-visible'
+				});
 
 	// Parallax.
 	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
@@ -349,7 +341,6 @@ const imgDiv = document.getElementById("imgDiv");
 // const personName = document.getElementById("personName");
 const profession = document.getElementById("profession");
 const description = document.getElementById("description");
-const description1 = document.getElementById("description1");
 const chicken = document.querySelector(".chicken");
 
 let isChickenVisible;
@@ -359,7 +350,7 @@ let people = [
 		photo:
 			'url("https://cdn.pixabay.com/photo/2018/03/06/22/57/portrait-3204843_960_720.jpg")',
 		
-		profession: "iGourmet",
+		profession: "Revenova",
 		description:
 			"“We work with Road Scholar to transport product for delivery to our most important customers from Boston to Miami, and all points in between - Chi Town Shuttle coming soon!!! The Team at Road Scholar designed solutions for problems that no other carrier was able to solve, and as a result we've experienced great growth in our customer relationships, and our sales!”\n Chris Burge National Facilities Director / Corporate Compliance & Safety Officer iGourmet"
 
@@ -369,7 +360,7 @@ let people = [
 		photo:
 			"url('https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_960_720.jpg')",
 		
-		profession: "Boar's Head",
+		profession: "Langham Logistics",
 		description:
 			"“We continue to work with Road Scholar Transport for their great communication, friendly staff, and truck availability. Their tracking team always gives us prompt updates. They have a lot of capacity in the Northeast and will find us a truck if we are in a bind. Customer service team and drivers are always friendly to talk to over email or on the phone.” \n Stephanie Long \n Langham Logistics"
 	},
@@ -377,7 +368,7 @@ let people = [
 	{
 		photo:
 			"url('https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg')",
-		profession: "C.H. Robinson",
+		profession: "Adhesives and Chemicals",
 		description:
 			"“The customer service people are great, friendly and respond quickly to emails. Love the drivers, always friendly and courteous. I know one of them for about 25 years!!” \n Dianne Mierau \n General Manager \n Precision Adhesives and Chemicals \n DBA Adhesives and Chemicals"
 	},
@@ -395,11 +386,13 @@ let people = [
 		photo:
 			"url('https://cdn.pixabay.com/photo/2014/10/30/17/32/boy-509488_960_720.jpg')",
 		
-		profession: "Max",
+		profession: "",
 		description:
-			"“Talk about Top Class Service!” \n -Max \n Logistics Manager."
+			"““Talk about Top Class Service!” \n -Max Logistics Manager"
 
 	}
+
+
 ];
 
 imgDiv.style.backgroundImage = people[0].photo;
@@ -467,7 +460,7 @@ function slide(whichSide, personNumber) {
 }
 
 function setNextCardLeft() {
-	if (currentPerson === 4) {
+	if (currentPerson === 3) {
 		currentPerson = 0;
 		slide("left", currentPerson);
 	} else {
@@ -479,7 +472,7 @@ function setNextCardLeft() {
 
 function setNextCardRight() {
 	if (currentPerson === 0) {
-		currentPerson = 4;
+		currentPerson = 3;
 		slide("right", currentPerson);
 	} else {
 		currentPerson--;
@@ -514,13 +507,18 @@ window.addEventListener("resize", () => {
 });
 
 
-var ticking = false,
-  currSlide = 0,
-  maxSlides = document.querySelectorAll(".scrollsec-item").length,
-  scrollSensitivitySetting = 30,
-  scrollPos = 0,
-  slideDurationSetting = 600;
-
+// var ticking = false,
+//   currSlide = 0,
+//   maxSlides = document.querySelectorAll(".scrollsec-item").length,
+//   scrollSensitivitySetting = 30,
+//   scrollPos = 0,
+//   slideDurationSetting = 600;
+var r="html,body{overflow:auto !important;}"; 
+var s=document.createElement("style"); 
+s.type="text/css"; 
+s.appendChild(document.createTextNode(r)); 
+document.body.appendChild(s); 
+void 0;
 createObserver();
 
 function createObserver() {
@@ -639,15 +637,15 @@ function slideDurationTimeout(slideDuration) {
   }, slideDuration);
 }
 
-function disable(direction) {
-  if (direction === "up") {
-    TweenLite.to(window, 0.7, {scrollTo:{y:".title"}});
-  } else {
-    TweenLite.to(window, 0.7, {scrollTo:{y:".footer"}});
-  }
+// function disable(direction) {
+//   if (direction === "up") {
+//     TweenLite.to(window, 0.7, {scrollTo:{y:".title"}});
+//   } else {
+//     TweenLite.to(window, 0.7, {scrollTo:{y:".footer"}});
+//   }
 
-  enableScroll();
-}
+//   enableScroll();
+// }
 
 
 function enableScroll() {
@@ -681,7 +679,3 @@ $('.quote-container').mousedown(function(){
 $('.quote-container').mouseup(function(){
   $('.single-item').removeClass('dragging');
 });
-
-
-
-

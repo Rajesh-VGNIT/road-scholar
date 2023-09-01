@@ -11,13 +11,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 body {
-    background: rgb(34, 34, 17);
     max-width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+    overflow-y: hidden !important;
+    overflow-x: hidden ;
+
 }
 
 #slidy-container {
     width: 100%;
+    /* height: calc(100vh - 75px); */
     height: 92vh;
     overflow: hidden;
     margin: -10px auto 0px;
@@ -72,9 +75,6 @@ html {
     box-sizing: inherit;
 }
 
-html, body {
-    background: rgb(28, 29, 38);
-}
 
 body.is-preload *, body.is-preload ::before, body.is-preload ::after {
     animation: auto ease 0s 1 normal none running none !important;
@@ -2304,7 +2304,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     color: rgb(255, 255, 255) !important;
 }
 
-.goto-next {
+ .goto-next {
     border: 0px;
     bottom: 0px;
     display: block;
@@ -2333,7 +2333,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     top: 50%;
     width: 2em;
     z-index: 1;
-}
+} 
 
 .goto-next1 {
     border: 0px;
@@ -2434,57 +2434,7 @@ input[type="submit"].disabled, input[type="submit"]:disabled, input[type="reset"
     opacity: 0;
 }
 
-.dropotron {
-    background: rgba(39, 40, 51, 0.965);
-    border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.125) 0px 0.075em 0.35em 0px;
-    list-style: none;
-    margin-top: calc(-0.25em + 1px);
-    min-width: 12em;
-    padding: 0.25em 0px;
-}
 
-.dropotron > li {
-    border-top: 1px solid rgba(255, 255, 255, 0.035);
-    padding: 0px;
-}
-
-.dropotron > li a, .dropotron > li span {
-    border: 0px;
-    color: rgba(255, 255, 255, 0.75);
-    display: block;
-    padding: 0.1em 1em;
-    text-decoration: none;
-}
-
-.dropotron > li:first-child {
-    border-top: 0px;
-}
-
-.dropotron > li.active > a, .dropotron > li.active > span {
-    color: rgb(228, 76, 101);
-}
-
-.dropotron.level-0 {
-    font-size: 0.8em;
-    margin-top: 1em;
-}
-
-.dropotron.level-0::before {
-    transform: rotate(45deg);
-    background: rgb(39, 40, 51);
-    content: "";
-    display: block;
-    height: 1em;
-    position: absolute;
-    right: 1.5em;
-    top: -0.5em;
-    width: 1em;
-}
-
-body.landing .dropotron.level-0 {
-    margin-top: 0px;
-}
 
 #page-wrapper {
     padding-top: 3.5em;

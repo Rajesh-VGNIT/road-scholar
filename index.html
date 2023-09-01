@@ -13,6 +13,49 @@
 
     </noscript>
   </head>
+  <style type="text/css">
+  
+    .scroll-container,
+    .scroll-area {
+      max-width: 100%;
+      height: 100vh;
+    }
+  
+    .scroll-container {
+      overflow: auto;
+      scroll-snap-type: y mandatory;
+    }
+  
+    .scroll-area {
+      scroll-snap-align: start;
+    }
+  
+    .scroll-container,
+    .scroll-area {
+      margin: 0 auto;
+    }
+  
+  
+  
+  
+  
+   /* .goto {
+      display: none;
+    }*/
+  
+   /* section#footer {
+  
+      height: 85vh;
+      
+    }*/
+  /*
+    .footer-main {
+      width: 98%;
+      position: fixed;
+      bottom: 0;
+    }
+  */
+  </style>
   <body>
     <div id="page-wrapper">
       <!-- Header -->
@@ -96,7 +139,8 @@
 
 
    <!--CAROUSEL-->
-<div class="content-widthh">
+   <div class="scroll-container">
+<div class="content-widthh scroll-area">
     <div class="slideshoww">
       <!-- Slideshow Items -->
       <div class="slideshow-itemss">
@@ -368,167 +412,10 @@ To always do what’s best for the customer. No matter what.
     </div>
   </div>
     
-      <!-- <div id="slidy-container">
-  <figure id="slidy">
-    <img src="images/RST ANIMATION MASTER 1.png" alt="eyes" >
-    <img src="images/RST ANIMATION MASTER 2.png" alt="lou" >
-    <img src="images/RST ANIMATION MASTER 3.png">
-    <img src="images/RST ANIMATION MASTER 4.png">
-    <img src="images/RST ANIMATION MASTER.png">
-    <img src="images/RST ANIMATION MASTER_PHOTO 6.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 7.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 8.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 9.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 10.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 11.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 12.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 13.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 14.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 15.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 16.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 17.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 18.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 19.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 20.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 21.jpg">
-    <img src="images/RST ANIMATION MASTER_PHOTO 22.jpg">
-</figure>
-</div> -->
-<div class="goto">
-            <a href="#expect" class="goto-next scrolly aa">Next</a>
-          </div>
-<!-- 
-<script>
-  /* user defined variables */
-      var timeOnSlide = 3,    
-    // the time each image will remain static on the screen, measured in seconds
-  timeBetweenSlides = 1,  
-    // the time taken to transition between images, measured in seconds
-
-// test if the browser supports animation, and if it needs a vendor prefix to do so
-    animationstring = 'animation',
-    animation = false,
-    keyframeprefix = '',
-    domPrefixes = 'Webkit Moz O Khtml'.split(' '), 
-    // array of possible vendor prefixes
-    pfx  = '',
-    slidy = document.getElementById("slidy"); 
-  if (slidy.style.animationName !== undefined) { animation = true; } 
-// browser supports keyframe animation w/o prefixes
-
-  if( animation === false ) {
-  for( var i = 0; i < domPrefixes.length; i++ ) {
-    if( slidy.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
-      pfx = domPrefixes[ i ];
-      animationstring = pfx + 'Animation';
-      keyframeprefix = '-' + pfx.toLowerCase() + '-';
-      animation = true;
-      break;
-      }
-    }
-  }
-
-  if( animation === false ) {
-  // animate in JavaScript fallback
-  } else {
-  var images = slidy.getElementsByTagName("img"),
-      firstImg = images[0], 
-      // get the first image inside the "slidy" element.
-      imgWrap = firstImg.cloneNode(false);  // copy it.
-  slidy.appendChild(imgWrap); // add the clone to the end of the images
-  var imgCount = images.length, // count the number of images in the slide, including the new cloned element
-      totalTime = (timeOnSlide + timeBetweenSlides) * (imgCount - 1), // calculate the total length of the animation by multiplying the number of _actual_ images by the amount of time for both static display of each image and motion between them
-      slideRatio = (timeOnSlide / totalTime)*100, // determine the percentage of time an induvidual image is held static during the animation
-      moveRatio = (timeBetweenSlides / totalTime)*100, // determine the percentage of time for an individual movement
-      basePercentage = 100/imgCount, // work out how wide each image should be in the slidy, as a percentage.
-      position = 0, // set the initial position of the slidy element
-      css = document.createElement("style"); // start marking a new style sheet
-    css.type = "text/css";
-    css.innerHTML += "#slidy { text-align: left; margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%;  }\n"; // set the width for the slidy container
-    css.innerHTML += "#slidy img { float: left; width: " + basePercentage + "%; }\n";
-    css.innerHTML += "@"+keyframeprefix+"keyframes slidy {\n"; 
-    for (i=0;i<(imgCount-1); i++) { // 
-    position+= slideRatio; // make the keyframe the position of the image
-    css.innerHTML += position+"% { left: -"+(i * 100)+"%; }\n";
-    position += moveRatio; // make the postion for the _next_ slide
-    css.innerHTML += position+"% { left: -"+((i+1) * 100)+"%; }\n";
-  }
-  css.innerHTML += "}\n";
-  css.innerHTML += "#slidy { left: 0%; "+keyframeprefix+"transform: translate3d(0,0,0); "+keyframeprefix+"animation: "+totalTime+"s slidy infinite; }\n"; // call on the completed keyframe animation sequence
-  document.body.appendChild(css); // add the new stylesheet to the end of the document
-  }
-
-</script>
- -->
-
-          <!-- <header1>
-            <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <img src="images/Home-slider3.png" alt="eyes" >
-                    <div class="cover">
-                        <div class="container">
-                            <div class="header1-content">
-                                <div class="line"></div>
-                                <h2>Teimagine Digital Experience with</h2>
-                                <h1>Start-ups and solutions</h1>
-                                <h4>We help entrepreneurs, start-ups and enterprises shape their ideas into products</h4>
-                            </div>
-                        </div>
-                     </div>
-                </div>                    
-                <div class="item">
-                    <img src="images/Home-slider4.png" alt="lou" >
-                    <div class="cover">
-                        <div class="container">
-                            <div class="header1-content">
-                                <div class="line animated bounceInLeft"></div>
-                                <h2>Reimagine Digital Experience with</h2>
-                                <h1>Intelligent solutions</h1>
-                                <h4>We help entrepreneurs, start-ups and enterprises shape their ideas into products</h4>
-                            </div>
-                        </div>
-                     </div>
-                </div>                
-                <div class="item">
-                    <img src="images/Home-slider5.png">
-                    <div class="cover">
-                        <div class="container">
-                            <div class="header1-content">
-                                <div class="line animated bounceInLeft"></div>
-                                <h2>Peimagine Digital Experience with</h2>
-                                <h1>Intelligent Solutions</h1>
-                                <h4>We help entrepreneurs, start-ups and enterprises shape their ideas into products</h4>
-                            </div>
-                        </div>
-                     </div>
-                </div>
-            </div>
-        </header1>
-<script>
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    dots:false,
-    nav:true,
-    mouseDrag:false,
-    autoplay:true,
-    animateOut: 'slideOutUp',
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-});
-</script> -->
+      
 
 
-  <div class="parent bg1" id="expect" style="background:url(images/Home-banner.png); background-repeat: no-repeat;background-size: cover;"> 
+  <div class="parent bg1 scroll-area" id="expect" style="background:url(images/Home-banner.png); background-repeat: no-repeat;background-size: cover;"> 
   
   
   
@@ -542,7 +429,7 @@ To always do what’s best for the customer. No matter what.
 
 
       <!---One--->
-      <section id="one">
+      <section id="one" class="scroll-area">
         <!-- <section id="after-banner-btn" class="wrapper after-banner">
           <div class="container">
             <div class="abc">
@@ -616,7 +503,7 @@ To always do what’s best for the customer. No matter what.
       </section>
       
       <!--Three-->
-      <div id="three" class=" wrapper style special fade" style="background-color:white;">
+      <div id="three" class=" wrapper style special fade scroll-area" style="background-color:white;">
   <h2 class="text" style="color:black; 
     margin-bottom: -50px;">TEMP CONTROLLED </h2>
       <div class="tabs">
@@ -827,10 +714,10 @@ To always do what’s best for the customer. No matter what.
     
   </div>
   <div class="goto" style="margin-top: -70px;">
-      <a href="#four" class="goto-next scrolly aa">Next</a>
+      <a href="#four45" class="goto-next scrolly aa">Next</a>
     </div>
-    <section>
-      <div class="inner" id="four">
+    <section class="scroll-area" id="four45">
+      <div class="inner scroll-area" >
         <div class="copy">
           <div id="scene">
 
@@ -897,7 +784,7 @@ To always do what’s best for the customer. No matter what.
 
 
 <!--four-->
-<section id="five" class="kgkr" >
+<section id="five" class="kgkr scroll-area" >
 <div class="wrapper style special fade bg1" style="margin-top: -20px; margin-bottom: -40px;">
   <h2 class="text">EXPEDITED EMERGENCY SHIPPING</h2>
   <div class="tabs1">
@@ -1092,7 +979,7 @@ To always do what’s best for the customer. No matter what.
 
 
 
-  <section id="seven" class="bg2" style="background-color: #edd7b1">
+  <section id="seven" class="bg2 scroll-area" style="background-color: #edd7b1">
     
   
   <div class="container7" style="background-color:white;">
@@ -1210,7 +1097,7 @@ To always do what’s best for the customer. No matter what.
     
   </footer>
 </section>
-<section>
+<section >
   <div class="goto">
   <a href="#page-wrapper" class="goto-next1 scrolly aa">Next</a>
 </div>
@@ -1218,6 +1105,7 @@ To always do what’s best for the customer. No matter what.
     © Copyright 2023 Road Scholar. All Rights Reserved.
   </div>
 </section>
+</div>
 </div>
 <script type="text/javascript">
 
