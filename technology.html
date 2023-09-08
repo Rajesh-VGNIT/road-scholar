@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Road Scholar4.2</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/technoloy.css" >
+    
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	
+</head>
+  <body>
+    <div id="page-wrapper">
+    	<header id="header">
+
+    		<div class="top-bar">
+                <div class="top-bar__contact">
+                    <div class="dropdown">
+                        <a href="about-us.html" class="dropbtn">About Us</a>
+    					<div class="dropdown-content">
+                <a href="awareness-campaign.html">Awareness Campaign </a>
+    						<a href="technology.html">Technology</a>
+    						<a href="quality-program.html">Quality Program</a>
+    					</div>
+    				</div>
+    				<a href="">Solutions</a>
+    				<a href="">Case Studies</a>
+    				<a href="">Blog's</a>
+    				<a href="">Contact</a>
+    				<a href="">Track Shipment</a>
+    				<a href="">Sign In</a>
+    				<a href="">Register</a>
+    			</div>
+    			<a href="index.html" class="top-bar__brand">
+    				<img class="logo23" src="images/Logo-Black.png" style="margin-left: -420px" /></a>
+    				<div class="abc1" style="display: flex; flex-direction: initial;margin-left: auto;">
+    					<button class="top-bar__nav-toggle hamburger" id="top-nav-toggle">
+    						<span></span>
+    						<span></span>
+    						<span></span>
+    					</button>
+    				</div>
+    				<nav class="top-bar__nav collapsed" id="top-bar__nav">
+    					<ul class="top-bar__nav-list ">
+    						<li><a href="">About</a></li>
+    						<li><a href="">SOLUTION</a></li>
+    						<li><a href="">CASE STUDIES</a></li>
+    						<li><a href="">BLOG'S </a></li>
+    						<li><a href="">CONTACT </a></li>
+    						<li><a href="">TRACK SHIPMENT</a></li>
+    						<li><a href="">Sign In</a></li>
+    						<li><a href="">Register</a></li>
+    					</ul>
+    				</nav>
+    			</div>
+    	</header>
+    
+
+    <script>
+        (function() {
+  		if (document.querySelector("#top-nav-toggle")) {
+    	var navToggle = document.querySelector("#top-nav-toggle");
+
+    	function watchNavClose(e) {
+      	var topNav = document.querySelector(".top-bar");
+      	if (!e.path.includes(topNav)) {
+        openCloseNav();
+        document.documentElement.removeEventListener("click", watchNavClose);
+      	}
+     }
+
+    	function openCloseNav() {
+      	var navToggle = document.querySelector("#top-nav-toggle");
+
+      	if (!navToggle.classList.contains("closed")) {
+        navToggle.classList.add("closed");
+        document.querySelector("#top-bar__nav").classList.remove("collapsed");
+        document.querySelector("html").addEventListener("click", watchNavClose);
+      } else {
+        navToggle.classList.remove("closed");
+        document.querySelector("#top-bar__nav").classList.add("collapsed");
+        document.documentElement.removeEventListener("click", watchNavClose);
+      }
+     }
+
+    	 navToggle.addEventListener("click", openCloseNav);
+  	 }
+	 })();
+
+   </script>
+
+
+<div class="scroll-container">
+  <section class="scroll-area ">
+    <section class="cta-img" id="cta-img">
+    <div class="cta-banner">
+      <div class="cta-wrapper">
+        
+        <h2>Technology<br></h2>
+      </div>
+    </div>
+  </section>
+ <div class="context textcenter">
+      <h1>Road Scholar Technology</h1>
+        <p>Trucking technology has revolutionized the industry,<br>
+            allowing us to pinpoint the location of a carrier <br>
+            at any moment and making it possible to maintain the integrity of <br>
+            temperature-protected products. 
+             
+
+        </p>
+
+    </div>
+  </section>
+  <div class="goto" style="margin-top: -5px">
+    <a href="#expect" id="moveDown" class="goto-next  aa">Next</a>
+  </div>
+
+
+  <section class="scroll-area" id="expect" >
+    <div class="container2">
+        
+
+
+        <div class="context2">
+
+            <div class="ferncontext">
+                 <ul>
+                    <li>All Road Scholar Transport trailers are equipped with <span style="color: black; font-weight: 600;">Samsara</span> road and driver-facing in-cab cameras </li>
+                   <li><span style="color: black; font-weight: 600;">Samsara</span> satellite tracking tracks our assets and your product, whether or not they are hooked to a tractor.</li>
+                  <li><span style="color: black; font-weight: 600;">Orbcomm</span>  satellite tracking platform allow us to monitor and change temperature remotely and provides back-up to Samsara satellites.</li>
+                  <li>Reefer temperatures are monitored both manually and on an excursion-based protocol by the Road Scholar Temp Team the entire time the product is in our possession.</li>
+                  <li>ERP system is integrated with <span style="color: black; font-weight: 600;">Orbcomm</span>, if actual reefer temperatures are out of the acceptable range, our Temp Team is alerted, and action is taken immediately.</li>
+                  <li>No matter the time of day or night, someone from the Road Scholar Temp Team has their eye on the gauge!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  
+ 
+<section id="after-banner-btn" class="wrapper after-banner" style="padding-top: 50px;">
+        <div class="container">
+          <div class="abc">
+            <a href="#" class="ghost-green" target="_blank">Track Shipment</a>
+            <a href="#" class="ghost-green" target="_blank">Request Pickup</a>
+            <a href="#" class="ghost-green" target="_blank">create bill of landing</a>
+            <a href="#" class="ghost-green" target="_blank">get a Quote</a>
+          </div>
+        </div>
+      </section>
+  </section>
+  <div class="goto" style="margin-top: -0px">
+    <a href="#footer" id="moveDown" class="goto-next  aa">Next</a>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--six-->
+
+
+
+
+
+<section id="footer" class="scroll-area">
+  <footer id="footer" class="wrapper ">
+    <img src="images/Logo-White.png" style="height:350px; margin-top: 150px; margin-bottom: 10px">
+    <ul class="icons" style="margin-bottom: -15px;">
+      <li>
+        <a href="#"><span class="foter">About</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="foter">Solution</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="foter">Case Studies</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="foter">Blog's</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="foter">Contact</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="foter">Track Shipment</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="foter">Sign in</span></a>
+      </li>
+      <li>
+        <a href="#"><span class="foter">RegiSter</span></a>
+      </li>
+      
+    </ul>
+    
+  </footer>
+</section>
+<section>
+  
+  <div class="f-header">
+    © Copyright 2023 Road Scholar. All Rights Reserved.
+  </div>
+</section>
+</div>
+</div>
+</div>
+
+<!-- Scripts -->
+
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

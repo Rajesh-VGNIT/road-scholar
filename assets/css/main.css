@@ -40,7 +40,51 @@ html ,body {
     --bg: #e0dfde;
     --bg1: #918e8e;
 }
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
 
+.dropdown .dropbtn {
+    font-size: 10px;    
+    border: none;
+    outline: none;
+    color: black;
+    /*padding: 14px 16px;*/
+    background-color: inherit;
+}
+
+/*.container a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+
+    padding-top: 20px; 
+    margin-left: -10px;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 body {
     line-height: 1;
 }
@@ -1178,7 +1222,6 @@ body.landing.is-preload::after {
     margin: 30px 6px 2px 72px !important;
 }
 .container7 .slide7-container7 .slide7 {
-/*min-height: 100vh;*/
 display: block !important;
 }
 .container7 .slide7-container7 .slide7 .content7 {
@@ -1332,11 +1375,8 @@ margin-left: 0rem !important;
     margin-bottom: calc(0rem + 0vmin) !important;
 }
 
-
 }
 
-    
-    
 
 @media screen and (max-width: 736px) {
     .row {
@@ -4514,8 +4554,6 @@ span {
     color: rgb(51, 51, 51);
     text-decoration: none;
     font-size: 50px;
-    margin-top: 8px;
-    margin-left: -40px;
     text-transform: uppercase;
     text-align: center;
     transition: all 0.25s ease 0s;
@@ -4993,7 +5031,7 @@ and (max-device-width : 320px) {
   /* ===========r css=========== */
   .top-bar__nav-toggle {
     margin-right: 8px !important;
-    margin-top: -15px !important;
+    margin-top: -7px !important;
 }
   .parent{
     height: 60vh !important;
