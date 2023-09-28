@@ -1927,10 +1927,10 @@ textarea {
     padding: 0.75em 1em;
 }
 
-::-webkit-input-placeholder {
+/* ::-webkit-input-placeholder {
     opacity: 1;
     color: rgba(255, 255, 255, 0.5) !important;
-}
+} */
 
 ol {
     list-style: decimal;
